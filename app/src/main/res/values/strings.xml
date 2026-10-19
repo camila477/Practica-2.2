@@ -1,0 +1,11 @@
+<resources>
+    <string name="back_btn_desc">Regresar</string>
+    <string name="home_screen"> Barra de arriba  </string>
+    <string name="app_name">App.miercoles</string>
+    <string name="materia">Desarrollo de aplicaciones para dispositivos móviles</string>
+    <string name="bottom_app_bar">Barra inferior </string>
+    <string name="home_fab_text">Agregar</string>
+    <string name="nombre">Camila Guadalupe </string>
+    <string name="apellidos">Palacios Fraire</string>
+    <string name="descripcion_imagen">Ilustracion de android</string>
+</resources>

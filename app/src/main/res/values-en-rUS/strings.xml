@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>}
+
+    <string name="back_btn_desc">Regresar</string>
+    <string name="home_screen">vfcfg</string>
+    <string name="app_name">App.Wednesday</string>
+    <string name="materia">Desarrollo de aplicaciones para dispositivos móviles</string>
+    <string name="nombre">Camila Guadalupe </string>
+    <string name="apellidos">Palacios Fraire</string>
+    <string name="descripcion_imagen">Ilustration  android</string>
+</resources>
