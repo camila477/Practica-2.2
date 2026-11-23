@@ -1,13 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    // Eliminamos id("com.android.application") porque ya está declarado arriba mediante el alias(libs.plugins.android.application)
+    id("com.google.gms.google-services")
 }
 
 android {
     namespace = "com.example.appmiercoles"
-    compileSdk {
-        version = release(37)
-    }
+
+    // CORRECCIÓN 1: compileSdk se escribe directamente como un número entero en Gradle moderno, no con release()
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.example.appmiercoles"
@@ -18,21 +20,27 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-   androidResources{
-       localeFilters.addAll(listOf("en-rUs", "es-rMX", "it-rIT"))
-   }
+
+    androidResources {
+        localeFilters.addAll(listOf("en-rUS", "es-rMX", "it-rIT"))
+    }
 
     buildTypes {
         release {
-            optimization {
-                enable = false
-            }
+            // CORRECCIÓN 2: Sintaxis correcta para desactivar la optimización si usas R8 / ProGuard en versiones recientes
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     buildFeatures {
         compose = true
     }
@@ -55,5 +63,9 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
 
+    implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.compose.material:material-icons-extended")
+
+    implementation(platform("com.google.firebase:firebase-bom:35.2.0"))
+    implementation("com.google.firebase:firebase-analytics")
 }

@@ -8,4 +8,9 @@
     <string name="nombre">Camila Guadalupe </string>
     <string name="apellidos">Palacios Fraire</string>
     <string name="descripcion_imagen">Ilustracion de android</string>
+    <string name="options_menu">Más opciones</string>
+    <string name="profile">Perfil</string>
+    <string name="config">Configuración</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="title_activity_second">SecondActivity</string>
 </resources>
